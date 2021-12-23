@@ -1,0 +1,153 @@
+.press-card {
+  .press-card__wrapper {
+    padding: 20px 120px;
+    background-color: #fff;
+
+    @include max-screen(991px) {
+      padding: 0 16px;
+    }
+
+    .content {
+      margin-bottom: 48px;
+
+      @include max-screen(991px) {
+        margin-bottom: 15px;
+      }
+
+      .news {
+        margin: 0;
+        flex-wrap: nowrap;
+        max-width: 100%;
+
+        @include max-screen(1199px) {
+          flex-direction: column;
+        }
+
+        @include max-screen(991px) {
+          padding: 24px 0;
+        }
+
+        img {
+          max-width: 440px;
+          width: 100%;
+          height: auto;
+
+          @include max-screen(1199px) {
+            max-width: 100%;
+            width: auto;
+          }
+        }
+
+        .info_news {
+          max-width: 615px;
+          width: auto;
+
+          @include max-screen(1399px) {
+            max-width: 435px;
+          }
+
+          @include max-screen(1199px) {
+            max-width: 100%;
+          }
+
+          @include max-screen(991px) {
+            height: max-content;
+            padding: 20px 16px;
+          }
+        }
+      }
+
+      hr {
+        margin: 48px 0;
+
+        @include max-screen(991px) {
+          margin: 15px 0;
+        }
+      }
+    }
+  }
+}
+
+.pagination {
+  margin: 0 auto;
+  width: max-content;
+  overflow: hidden;
+  border: 2px solid black;
+  border-radius: 5px;
+
+  .page-item {
+
+    .link {
+      position: relative;
+      display: block;
+      padding: 10px 15px;
+      min-height: 40px;
+      height: 100%;
+      font-family: $Lufga;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.1;
+      color: black;
+      background-color: white;
+      transition: 150ms;
+
+      &.page-now {
+        padding: 10px 24px 10px 28px;
+        border: 0;
+        &:hover {
+          background-color: white;
+        }
+      }
+
+      &.prev {
+        width: 44px;
+        border-right: 2px solid black;
+
+        &:hover {
+          transition: 150ms;
+          background-color: $grey;
+        }
+
+        &:before {
+          content: "";
+          display: block;
+          width: 12px;
+          height: 12px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(180deg);
+          background-image: url("../images/arrow-black.svg");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center center;
+        }
+      }
+
+      &.next {
+        width: 44px;
+        border-left: 2px solid black;
+
+        &:hover {
+          transition: 150ms;
+          background-color: $grey;
+        }
+
+        &:before {
+          content: "";
+          display: block;
+          width: 12px;
+          height: 12px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-image: url("../images/arrow-black.svg");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center center;
+        }
+      }
+    }
+  }
+}
