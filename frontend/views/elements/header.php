@@ -34,17 +34,6 @@
                             <li><a class="dropdown-item" href="<?=\yii\helpers\Url::to(['site/generic-page','href'=>'consumer-marketing'])?>">Consumer Market Entry</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="<?=\yii\helpers\Url::to(['brands/index'])?>" id="navbarDropdown_3">
-                            Our Brands
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown_3">
-                            <? foreach (\backend\modules\brands\models\Brands::getMainBrands() as $brand){ ?>
-                                <li><a class="dropdown-item" href="<?=\yii\helpers\Url::to(['brands/brand','href'=>$brand->href])?>"><?=$brand->brand_name?></a></li>
-                            <? } ?>
-                            <li><a class="dropdown-item red" href="<?=\yii\helpers\Url::to(['brands/index'])?>">Other Brands <i class="fas fa-arrow-right"></i></a></li>
-                        </ul>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?=\yii\helpers\Url::to(['press/index'])?>">Press & Media</a>
                     </li>

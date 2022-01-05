@@ -33,13 +33,13 @@ return [
             'rules' => [
                 '' => 'site/index',
                 'auth'=>'auth/auth',
-                'contact'=>'contact/index',
+//                'contact'=>'contact/index',
                 'press'=>'press/index',
                 'press/<href>'=>'press/news',
-                'brands'=>'brands/index',
-                'brands/<href>'=>'brands/brand',
-                'events'=>'events/index',
-                'events/<href>'=>'events/event',
+//                'brands'=>'brands/index',
+//                'brands/<href>'=>'brands/brand',
+//                'events'=>'events/index',
+//                'events/<href>'=>'events/event',
                 '<href>'=>'site/generic-page',
             ],
 

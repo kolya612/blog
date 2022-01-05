@@ -57,13 +57,16 @@ class OneModelBaseController extends BaseController
         return parent::init();
     }
 
-    public function beforeAdd(){
+    public function beforeAdd()
+    {
     }
 
-    public function beforeEdit(){
+    public function beforeEdit()
+    {
     }
 
-    public function beforeAddEdit(){
+    public function beforeAddEdit()
+    {
     }
 
     public function sortEnable()
@@ -93,7 +96,7 @@ class OneModelBaseController extends BaseController
 
                 if(Yii::$app->request->post('action-after-save')=='add') return $this->redirect(['add']);
                 if(Yii::$app->request->post('action-after-save')=='logout') return $this->redirect(['/site/logout']);
-                return $this->redirect(['edit', 'id' => $formModel->id]);
+                return $this->redirect(['default/edit', 'id' => $formModel->id]);
             } else {
                 Yii::$app->getSession()->setFlash('error',  Yii::t('index',$this->errorMessage));
             }
@@ -119,6 +122,7 @@ class OneModelBaseController extends BaseController
                 if(Yii::$app->request->post('action-after-save')=='add') return $this->redirect(['add']);
                 if(Yii::$app->request->post('action-after-save')=='logout') return $this->redirect(['/site/logout']);
 //                $this->addToLog(UserLog::SAVED, $formModel->id);
+
                 Yii::$app->getSession()->setFlash('success',  Yii::t('index',$this->successEditMessage));
             } else {
                 Yii::$app->getSession()->setFlash('error',  Yii::t('index',$this->errorMessage));
@@ -139,7 +143,8 @@ class OneModelBaseController extends BaseController
 //        $this->addToLog(UserLog::SORTED, $elements);
     }
 
-    public function actionDelete($id){
+    public function actionDelete($id)
+    {
         return $this->actionRemove($id);
     }
 
@@ -155,11 +160,13 @@ class OneModelBaseController extends BaseController
         if (!Yii::$app->request->isPost && !Yii::$app->request->isAjax) $this->redirect('index');
     }
 
-    public function userActions(){
+    public function userActions()
+    {
         return ['index','add','edit','delete','sort','remove','uploadImage','getImage','deleteImage','uploadFile','getFile','deleteFile'];
     }
 
-    public function clearTmpImages(){
+    public function clearTmpImages()
+    {
         // Clear Tmp Images
 
         $tmpImages=Image::find()->where('item_id=:item_id AND added_date < :added_date ', ['item_id'=>'0', 'added_date'=>time()-172800]);

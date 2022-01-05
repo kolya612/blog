@@ -3,12 +3,12 @@
 use common\models\User;
 use wbp\dumper\Dumper;
 use yii\helpers\Html;
-use yii\bootstrap4\ActiveForm;
+use yii\bootstrap5\ActiveForm;
 use yii\web\View;
 
 /* @var $this yii\web\View */
 /* @var $model backend\modules\members\models\Members */
-/* @var $form yii\bootstrap4\ActiveForm */
+/* @var $form yii\bootstrap5\ActiveForm */
 
 $form = ActiveForm::begin(['layout' => 'horizontal', 'id'=>'owners-form']);
 

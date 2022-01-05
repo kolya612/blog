@@ -1,10 +1,8 @@
 <?php
 namespace frontend\controllers;
 
-use backend\modules\events\models\Events;
 use backend\modules\faq\models\FAQ;
 use backend\modules\pages\models\Pages;
-use backend\modules\press\models\Press;
 use common\models\WbpActiveRecord;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
@@ -48,10 +46,7 @@ class SiteController extends BaseController
             $page->getImage($page::$imageTypes[0])->getUrl()
         );
 
-        $events = Events::getNextEvents(date("Y-m-d"), 6);
-        $press = Press::getNextNews(date("Y-m-d"), 2);
-
-        return $this->render('index', ['events' => $events, 'press' => $press]);
+        return $this->render('index');
     }
 
     public function actionGenericPage($href)

@@ -27,7 +27,7 @@ class Pages  extends WbpActiveRecord
     public function rules()
     {
         return [
-            [['title','sub_title','description','href','view','seo_title','seo_keywords','seo_description'], 'string','on' => [self::ADMIN_ADD_SCENARIO, self::ADMIN_EDIT_SCENARIO]],
+            [['title','description','href','view','seo_title','seo_keywords','seo_description'], 'string','on' => [self::ADMIN_ADD_SCENARIO, self::ADMIN_EDIT_SCENARIO]],
             [['status'], 'integer']
         ];
     }
